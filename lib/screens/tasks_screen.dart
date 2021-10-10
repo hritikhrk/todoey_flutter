@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlueAccent,
-        onPressed: () {},
-        child: Icon(Icons.add),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: FloatingActionButton(
+          backgroundColor: Colors.lightBlueAccent,
+          onPressed: () {},
+          child: Icon(Icons.add),
+        ),
       ),
       body: SafeArea(
         child: Column(
@@ -58,6 +62,7 @@ class TasksScreen extends StatelessWidget {
                     topLeft: Radius.circular(20.0),
                   ),
                 ),
+                child: TasksList(),
               ),
             ),
           ],
