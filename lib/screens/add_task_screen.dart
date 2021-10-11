@@ -17,7 +17,10 @@ class AddTaskScreen extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.only(top: 30.0),
+          padding: EdgeInsets.only(
+            top: 30.0,
+            bottom: 30.0,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
