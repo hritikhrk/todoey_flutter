@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey_flutter/models/task_data.dart';
 
+//ignore: must_be_immutable
 class AddTaskScreen extends StatelessWidget {
-  late final String newTaskTitle;
-  final Function addTaskCallback;
-
-  AddTaskScreen(this.addTaskCallback);
+  String newTaskTitle = '';
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,10 @@ class AddTaskScreen extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  addTaskCallback(newTaskTitle);
+                  Provider.of<TaskData>(
+                    context,
+                    listen: false,
+                  ).addTask(newTaskTitle);
                   Navigator.pop(context);
                 },
                 child: Text(
